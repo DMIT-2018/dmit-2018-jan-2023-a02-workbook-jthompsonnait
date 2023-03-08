@@ -1,0 +1,9 @@
+﻿@page "/"
+@namespace BlazorWebApp.Pages
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = "_Layout";
+}
+<script src="_content/MatBlazor/dist/matBlazor.js" ></script>
+<link ref="_content/MatBlazor/dist/matBlazor.css" rel="stylesheet"/>
+<component type="typeof(App)" render-mode="ServerPrerendered" />

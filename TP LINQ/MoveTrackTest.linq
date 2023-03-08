@@ -45,10 +45,10 @@ void Main()
 		}
 
 		List<MoveTrackView> moveTracks = new List<MoveTrackView>();
-		moveTracks.Add(new MoveTrackView() { TrackId = 822, TrackNumber = 4 });
-		moveTracks.Add(new MoveTrackView() { TrackId = 756, TrackNumber = 3 });
-		moveTracks.Add(new MoveTrackView() { TrackId = 793, TrackNumber = 2 });
-		moveTracks.Add(new MoveTrackView() { TrackId = 543, TrackNumber = 1 });
+		moveTracks.Add(new MoveTrackView() { TrackId = 822, TrackNumber = 1 });
+		moveTracks.Add(new MoveTrackView() { TrackId = 756, TrackNumber = 2 });
+		moveTracks.Add(new MoveTrackView() { TrackId = 793, TrackNumber = 3 });
+		moveTracks.Add(new MoveTrackView() { TrackId = 543, TrackNumber = 4 });
 
 		//	showing that both the playlist and track does not exist
 		Console.WriteLine("Before moving track");
