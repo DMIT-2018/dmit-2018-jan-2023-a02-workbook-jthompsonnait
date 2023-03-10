@@ -25,10 +25,17 @@
             </NavLink>
         </div>
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="/SamplePages/Basics">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Basics
+            <NavLink class="nav-link" @onclick="() => expandSamplePages = !expandSamplePages">
+                <span class="oi oi-list-rich" aria-hidden="true"></span>Sample Pages
             </NavLink>
+            @if (expandSamplePages)
+            {
+                <NavLink class="nav-link" href="/SamplePages/Basics">
+                    <span>Basics</span>
+                </NavLink>
+            }
         </div>
+
     </nav>
 </div>
 
@@ -41,4 +48,7 @@
     {
         collapseNavMenu = !collapseNavMenu;
     }
+
+    //  hold the current state of the sample page toggle
+    private bool expandSamplePages;
 }

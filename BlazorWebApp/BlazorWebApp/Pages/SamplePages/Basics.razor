@@ -1,4 +1,28 @@
 ﻿@page "/SamplePages/Basics"
-<h3>Basics</h3>
+<PageTitle>Review Page Basics</PageTitle>
+<h1>Basic Blazor Page</h1>
+
+@{
+    //  The razor page contain both CS code and HTML code
+    //  The @ symbol takes processing from the html environment
+    //      and moves it ot the C# environment
+
+    //  Processing any HTML code moves processing into the html environment
+}
+<h3>Demonstration of OnInitializedAsync Processing</h3>
+<p>
+    @*Using the @ symbol to enter a coding block*@
+    @if (string.IsNullOrWhiteSpace(myName))
+    {
+        <p>The random number is odd</p>
+    }
+    else
+    {
+        <p>@myName</p>
+    }
+   
+</p>
+
+
 
 

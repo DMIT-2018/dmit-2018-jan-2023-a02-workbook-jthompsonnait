@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33414.496
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorWebApp", "BlazorWebApp\BlazorWebApp.csproj", "{7313A8FB-8408-4F7C-96B6-8FE9F31A7A23}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorWebApp", "BlazorWebApp\BlazorWebApp.csproj", "{7313A8FB-8408-4F7C-96B6-8FE9F31A7A23}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChinookSystem", "ChinookSystem\ChinookSystem.csproj", "{8CE2394C-5A0E-43FD-B633-25C6328BE01D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{7313A8FB-8408-4F7C-96B6-8FE9F31A7A23}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7313A8FB-8408-4F7C-96B6-8FE9F31A7A23}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7313A8FB-8408-4F7C-96B6-8FE9F31A7A23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CE2394C-5A0E-43FD-B633-25C6328BE01D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CE2394C-5A0E-43FD-B633-25C6328BE01D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CE2394C-5A0E-43FD-B633-25C6328BE01D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CE2394C-5A0E-43FD-B633-25C6328BE01D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
