@@ -14,13 +14,13 @@
     @*Using the @ symbol to enter a coding block*@
     @if (string.IsNullOrWhiteSpace(myName))
     {
-        <p>The random number is odd</p>
+        <p>The random number is odd [@oddEven]</p>
     }
     else
     {
         <p>@myName</p>
     }
-   
+   <button class="btn-success" @onclick="RandomValue">Random Value</button>
 </p>
 
 

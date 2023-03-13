@@ -5,7 +5,7 @@ VisualStudioVersion = 17.5.33414.496
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorWebApp", "BlazorWebApp\BlazorWebApp.csproj", "{7313A8FB-8408-4F7C-96B6-8FE9F31A7A23}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChinookSystem", "ChinookSystem\ChinookSystem.csproj", "{8CE2394C-5A0E-43FD-B633-25C6328BE01D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChinookSystem", "ChinookSystem\ChinookSystem.csproj", "{8CE2394C-5A0E-43FD-B633-25C6328BE01D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

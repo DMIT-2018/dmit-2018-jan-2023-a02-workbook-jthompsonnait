@@ -1,0 +1,65 @@
+﻿@page "/SamplePages/Invoice"
+<PageTitle>Invoice</PageTitle>
+<h3>Invoice #@invoice.InvoiceNo</h3>
+
+@*
+    ***  OnSubmit *** 
+-   The OnSubmit event fires when the user clicks on the Submit button the the form.
+    Its handler takes as an argument the EditContext object and is used to trigger
+        some custom logic based io the validity of the form.
+NOTE:   When there is a handler for the OnSubmit event, the OnValidSubmit and 
+            OnInvalidSubmit events will not be fired.
+            
+    *** OnValidSubmit ***
+-   The OnValidSubmit event fires when the form is submitted and there are no 
+        validations errors.
+    It is mapped to OnValidSubmit event of the Microsoft EditForm.  Its handler takes
+        the EditContext as an argument.
+        
+    ***  OnInvalidSubmit ***
+    -   The OnInvalidSubmit event fires when there are validation errors in the form
+            upon it submission
+        It is mapped to OnInvalidSbmit event of the Microsoft EditForm.  Its handler
+        takes the EditContext as an argument
+        
+
+NOTE:   We can use not of these events or one of these events.  The only situation where
+            we can use two events is when we set
+                OnValidSubmit and OnInValidSubmit together.  Neither of those two
+                events can ve consumed if the OnSUbmit is set.
+
+*@
+
+<EditForm Model="@invoice" OnSubmit="@HandleSubmit">
+    <div>
+        <p>
+            <label>Invoice Date</label>
+            <label>@invoice.InvoiceDate.ToShortDateString()</label>
+        </p>
+    </div>
+    <div>
+        <p>
+            <label>Sale Person</label>
+            <InputText id="salePerson" @bind-Value="invoice.SalePerson"></InputText>
+        </p>
+        <p>
+            <label>Payment Type</label>
+            <InputText id="paymentType" @bind-Value="invoice.PaymentType"></InputText>
+        </p>
+    </div>
+    <div>
+        <p>
+            <label>Sub Total</label>
+            <label>@invoice.SubTotal</label>
+        </p>
+        <p>
+            <label>Tax</label>
+            <label>@invoice.Tax</label>
+        </p>
+    </div>
+    <button type="submit">Submit</button>
+</EditForm>
+<div>
+    <h4>@feedback</h4>
+</div>
+
