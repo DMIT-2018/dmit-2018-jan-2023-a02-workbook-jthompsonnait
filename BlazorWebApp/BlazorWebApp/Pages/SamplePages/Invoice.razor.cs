@@ -22,5 +22,14 @@ namespace BlazorWebApp.Pages.SamplePages
         {
             feedback = $"Submitted Press - {counter++}";
         }
+        private void HandleValidSubmit()
+        {
+            feedback = $"Valid Submit - {counter++}";
+        }
+
+        private void HandleInvalidSubmit()
+        {
+            feedback = $"Invalid Submit - {counter++}";
+        }
     }
 }

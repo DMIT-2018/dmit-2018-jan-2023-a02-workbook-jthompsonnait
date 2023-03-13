@@ -3,25 +3,25 @@
 <h3>Invoice #@invoice.InvoiceNo</h3>
 
 @*
-    ***  OnSubmit *** 
+    ***  OnSubmit ***
 -   The OnSubmit event fires when the user clicks on the Submit button the the form.
     Its handler takes as an argument the EditContext object and is used to trigger
         some custom logic based io the validity of the form.
-NOTE:   When there is a handler for the OnSubmit event, the OnValidSubmit and 
+NOTE:   When there is a handler for the OnSubmit event, the OnValidSubmit and
             OnInvalidSubmit events will not be fired.
-            
+
     *** OnValidSubmit ***
--   The OnValidSubmit event fires when the form is submitted and there are no 
+-   The OnValidSubmit event fires when the form is submitted and there are no
         validations errors.
     It is mapped to OnValidSubmit event of the Microsoft EditForm.  Its handler takes
         the EditContext as an argument.
-        
+
     ***  OnInvalidSubmit ***
     -   The OnInvalidSubmit event fires when there are validation errors in the form
             upon it submission
         It is mapped to OnInvalidSbmit event of the Microsoft EditForm.  Its handler
         takes the EditContext as an argument
-        
+
 
 NOTE:   We can use not of these events or one of these events.  The only situation where
             we can use two events is when we set
@@ -30,7 +30,18 @@ NOTE:   We can use not of these events or one of these events.  The only situati
 
 *@
 
-<EditForm Model="@invoice" OnSubmit="@HandleSubmit">
+<EditForm Model="@invoice" OnValidSubmit="@HandleValidSubmit"
+          OnInvalidSubmit="@HandleInvalidSubmit">
+    @*
+    The DataAnnotationsValidator is the standard validator type in blazor.
+    Adding this compnent within an EditForm component will enable form validation
+    *@
+    <DataAnnotationsValidator/>
+    @*
+        The ValidationSummary component can simply be dropped into an EditForm
+            in our markup.  No additional parameters are required at all.
+    *@
+    @*<ValidationSummary/>*@
     <div>
         <p>
             <label>Invoice Date</label>
@@ -40,11 +51,13 @@ NOTE:   We can use not of these events or one of these events.  The only situati
     <div>
         <p>
             <label>Sale Person</label>
-            <InputText id="salePerson" @bind-Value="invoice.SalePerson"></InputText>
+            <InputText id="salePerson" @bind-Value="invoice.SalePerson"/>
+            <ValidationMessage For="() => invoice.SalePerson"/>
         </p>
         <p>
             <label>Payment Type</label>
-            <InputText id="paymentType" @bind-Value="invoice.PaymentType"></InputText>
+            <InputText id="paymentType" @bind-Value="invoice.PaymentType"/>
+            <ValidationMessage For="() => invoice.PaymentType" />
         </p>
     </div>
     <div>
