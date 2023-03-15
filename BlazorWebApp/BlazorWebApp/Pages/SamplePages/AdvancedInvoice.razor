@@ -1,0 +1,52 @@
+﻿@page "/SamplePages/AdvancedInvoice"
+<PageTitle>Advanced Invoice</PageTitle>
+<h3>Invoice #@invoice.InvoiceNo</h3>
+
+
+<EditForm EditContext="editContext" OnValidSubmit="@HandleValidSubmit"
+          OnInvalidSubmit="@HandleInvalidSubmit">
+
+    <DataAnnotationsValidator />
+    <ValidationSummary/>
+    <div>
+        <p>
+            <label>Invoice Date</label>
+            <label>@invoice.InvoiceDate.ToShortDateString()</label>
+        </p>
+    </div>
+    <div>
+        <p>
+            <label>Sale Person</label>
+            <InputText id="salePerson" @bind-Value="invoice.SalePerson" />
+            <ValidationMessage For="() => invoice.SalePerson" />
+        </p>
+        <p>
+            <label>Payment Type</label>
+            <InputSelect @bind-Value="invoice.PaymentType">
+                @* iterate the enum PaymentTypes and get each value within it*@
+                @foreach (var paymentType in Enum.GetValues(typeof(PaymentTypes)))
+                {
+                    <option value="@paymentType">@paymentType</option>
+                }
+            </InputSelect>
+           @* <ValidationMessage For="() => invoice.PaymentType" />*@
+        </p>
+    </div>
+    <div>
+        <p>
+            <label>Sub Total</label>
+            <label>@invoice.SubTotal</label>
+        </p>
+        <p>
+            <label>Tax</label>
+            <label>@invoice.Tax</label>
+        </p>
+    </div>
+    <button type="submit">Submit</button>
+</EditForm>
+<div>
+    <h4>@feedback</h4>
+</div>
+
+
+
