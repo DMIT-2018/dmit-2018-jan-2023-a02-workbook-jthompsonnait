@@ -7,7 +7,7 @@
           OnInvalidSubmit="@HandleInvalidSubmit">
 
     <DataAnnotationsValidator />
-    <ValidationSummary/>
+    @* <ValidationSummary/>*@
     <div>
         <p>
             <label>Invoice Date</label>
@@ -22,14 +22,14 @@
         </p>
         <p>
             <label>Payment Type</label>
-            <InputSelect @bind-Value="invoice.PaymentType">
+            <InputSelect @bind-Value="invoice.PaymentType" @onclick="() => OnPaymentTypeClick()">
                 @* iterate the enum PaymentTypes and get each value within it*@
                 @foreach (var paymentType in Enum.GetValues(typeof(PaymentTypes)))
                 {
                     <option value="@paymentType">@paymentType</option>
                 }
             </InputSelect>
-           @* <ValidationMessage For="() => invoice.PaymentType" />*@
+            <ValidationMessage For="() => invoice.PaymentType" />
         </p>
     </div>
     <div>
@@ -42,8 +42,13 @@
             <label>@invoice.Tax</label>
         </p>
     </div>
-    <button type="submit">Submit</button>
+    <MatButton type="submit" Raised="true"
+               Disabled="@(!context.IsModified() || !context.Validate())">Click Me</MatButton>
 </EditForm>
+<p>
+    <MatButton Label="Index Page" Raised="true" @onclick="@(() => NavigationManager.NavigateTo($"/"))"/>
+</p>
+
 <div>
     <h4>@feedback</h4>
 </div>

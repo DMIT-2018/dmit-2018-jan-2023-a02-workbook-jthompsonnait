@@ -2,8 +2,11 @@
 <ArrayOfArrayOfArrayOfString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <ArrayOfArrayOfString>
     <ArrayOfString>
-      <string>C:\OD\OneDrive - NAIT\Jan 2023\dmit-2018-jan-2023-a02-workbook-jthompsonnait\BlazorWebApp\BlazorWebApp\Pages\SamplePages\Invoice.razor</string>
-      <string>C:\OD\OneDrive - NAIT\Jan 2023\dmit-2018-jan-2023-a02-workbook-jthompsonnait\BlazorWebApp\BlazorWebApp\Pages\SamplePages\Invoice.razor.cs</string>
+      <string>C:\OD\OneDrive - NAIT\Jan 2023\dmit-2018-jan-2023-a02-workbook-jthompsonnait\BlazorWebApp\BlazorWebApp\Pages\SamplePages\AdvancedInvoice.razor</string>
+      <string>C:\OD\OneDrive - NAIT\Jan 2023\dmit-2018-jan-2023-a02-workbook-jthompsonnait\BlazorWebApp\BlazorWebApp\Pages\SamplePages\AdvancedInvoice.Razor.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>C:\OD\OneDrive - NAIT\Jan 2023\dmit-2018-jan-2023-a02-workbook-jthompsonnait\BlazorWebApp\ChinookSystem\ViewModel\InvoiceView.cs</string>
     </ArrayOfString>
   </ArrayOfArrayOfString>
 </ArrayOfArrayOfArrayOfString>

@@ -1,5 +1,6 @@
 ﻿using System.Security.AccessControl;
 using ChinookSystem.ViewModel;
+using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
 
 namespace BlazorWebApp.Pages.SamplePages
@@ -25,6 +26,15 @@ namespace BlazorWebApp.Pages.SamplePages
 
         //  Used to store the validation messages
         private ValidationMessageStore? messageStore;
+        #endregion
+
+        #region Properties
+        [Parameter]
+        public EventCallback<string> OnSelectionChanged { get; set; }
+
+        //  need to inject the NavigationManager so we can do a redirect back to the index page
+        [Inject]
+        protected NavigationManager? NavigationManager { get; set; }
         #endregion
 
         protected override async Task OnInitializedAsync()
@@ -58,6 +68,15 @@ namespace BlazorWebApp.Pages.SamplePages
             {
                 messageStore?.Add(() => invoice.PaymentType, "Payment Type cannot be set to Unknown");
             }
+        }
+
+        //  called when [payment type is click]
+        private async void OnPaymentTypeClick()
+        {
+            //  waiting for payment type to finish changing
+            await OnSelectionChanged.InvokeAsync(invoice.PaymentType);
+            //  manually call the validation for the edit context
+            editContext?.Validate();
         }
 
         private void HandleSubmit()
