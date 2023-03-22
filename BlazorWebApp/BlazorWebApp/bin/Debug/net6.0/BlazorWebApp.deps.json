@@ -14,7 +14,8 @@
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.13",
           "Microsoft.AspNetCore.Identity.UI": "6.0.13",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.13",
-          "Microsoft.EntityFrameworkCore.Tools": "6.0.13"
+          "Microsoft.EntityFrameworkCore.Tools": "6.0.13",
+          "PlaylistManagementSystem": "1.0.0"
         },
         "runtime": {
           "BlazorWebApp.dll": {}
@@ -585,6 +586,14 @@
         "runtime": {
           "ChinookSystem.dll": {}
         }
+      },
+      "PlaylistManagementSystem/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.13"
+        },
+        "runtime": {
+          "PlaylistManagementSystem.dll": {}
+        }
       }
     }
   },
@@ -1015,6 +1024,11 @@
       "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
     },
     "ChinookSystem/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PlaylistManagementSystem/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
