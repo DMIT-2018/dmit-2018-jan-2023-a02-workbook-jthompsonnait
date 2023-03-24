@@ -1,19 +1,43 @@
 using BlazorWebApp.Areas.Identity;
 using BlazorWebApp.Data;
 using MatBlazor;
-using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
-using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.EntityFrameworkCore;
+using PlaylistManagementSystem;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+//  :given
+//  Supplied database connection due to the fact that we created this web
+//      app to use Individual Accounts
+//  Code retrieves the connection string from appsettings.json
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+//  :added
+//  Code retrieves from the ChinookDb connection string
+//  Code for your project, it will be GetConnectionString("EBikeDB");
+var connectionStringChinook = builder.Configuration.GetConnectionString("ChinookDB");
+
+//  :given
+//  Register the supplied connection string with the IServiceCollection (.Services)
+//  Register the connection string for Individual Account
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
+
+//  :added
+//  Code the logic to add our class library services to IServiceCollection
+//  One could do the registration code in Program.cs
+//  HOWEVER, every time a service class is added, you would be changing this file.
+//  The implementation of the DBContent and AddTransient(...) code in this example
+//      will be done in an extension method of the IServiceCollection
+//  The extension method will be code inside the PlaylistManagementSystem class library
+//  The extension method will have a parameter: options.UseSqlServer()
+//  We will name the method bu the service type that we are running ie:
+//      PurchaseOrderDependencies, SalesDependencies
+builder.Services.AddBackendDependencies(options => options.UseSqlServer(connectionStringChinook));
+
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
