@@ -1,5 +1,26 @@
 ﻿@page "/SamplePages/PlaylistManagement"
 <PageTitle>Playlist Management</PageTitle>
-<h3>PlaylistManagement</h3>
+<h3>Playlist Management</h3>
+<div id="container">
+    @* Left side of the screen*@
+    <div>
+        Search Pattern
+        <p>
+            <MatTextField @bind-Value="@searchPattern"/>
+        </p>
+        <p>
+            <MatRadioGroup @bind-Value="@searchType" TValue="string">
+                <MatRadioButton Value="@("Artist")" Label="Artist" TValue="string"></MatRadioButton>
+                <MatRadioButton Value="@("Album")" TValue="string">Album</MatRadioButton>
+            </MatRadioGroup>
+            <button class="btn-success" onclick="@FetchArtistOrAlbumTracks">Search</button>
+        </p>
+    </div>
+    @* Right side of the screen*@
+    <div>
+
+    </div>
+    @feedBack
+</div>
 
 

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿#nullable disable
+using Microsoft.AspNetCore.Components;
 using PlaylistManagementSystem.BLL;
 using PlaylistManagementSystem.Paginator;
 using PlaylistManagementSystem.ViewModels;
@@ -42,8 +43,31 @@ namespace BlazorWebApp.Pages.SamplePages
 
         //paginator collection of track selection view
         protected PagedResult<TrackSelectionView> PaginatorTrackSelection { get; set; } = new();
-
         #endregion
 
+        #region Methods
+        //  sort method
+        private async void Sort(string column)
+        {
+            Direction = SortField == column ? Direction == "asc" ? "desc" : "asc" : "asc";
+            SortField = column;
+            if (!string.IsNullOrWhiteSpace(searchPattern))
+            {
+                await FetchArtistOrAlbumTracks();
+            }
+        }
+
+        private async Task FetchArtistOrAlbumTracks()
+        {
+            //  we would normal check if the user has enter ina value int the search
+            //      pattern, but we will let the service do the error checking
+            PaginatorTrackSelection = await PlaylistTrackService.FetchArtistOrAlbumTracks(
+                searchType, searchPattern, CurrentPage, PAGE_SIZE, SortField, Direction);
+            //  Blazor would not recognize the state change and not refresh the UI
+            await InvokeAsync(StateHasChanged)
+
+
+        }
+        #endregion
     }
 }

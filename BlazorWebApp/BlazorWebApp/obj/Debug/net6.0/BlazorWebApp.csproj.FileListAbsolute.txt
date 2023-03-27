@@ -80,3 +80,4 @@ C:\OD\OneDrive - NAIT\Jan 2023\dmit-2018-jan-2023-a02-workbook-jthompsonnait\Bla
 C:\OD\OneDrive - NAIT\Jan 2023\dmit-2018-jan-2023-a02-workbook-jthompsonnait\BlazorWebApp\BlazorWebApp\bin\Debug\net6.0\ChinookSystem.pdb
 C:\OD\OneDrive - NAIT\Jan 2023\dmit-2018-jan-2023-a02-workbook-jthompsonnait\BlazorWebApp\BlazorWebApp\bin\Debug\net6.0\PlaylistManagementSystem.dll
 C:\OD\OneDrive - NAIT\Jan 2023\dmit-2018-jan-2023-a02-workbook-jthompsonnait\BlazorWebApp\BlazorWebApp\bin\Debug\net6.0\PlaylistManagementSystem.pdb
+C:\OD\OneDrive - NAIT\Jan 2023\dmit-2018-jan-2023-a02-workbook-jthompsonnait\BlazorWebApp\BlazorWebApp\obj\Debug\net6.0\scopedcss\Pages\SamplePages\PlaylistManagement.razor.rz.scp.css
