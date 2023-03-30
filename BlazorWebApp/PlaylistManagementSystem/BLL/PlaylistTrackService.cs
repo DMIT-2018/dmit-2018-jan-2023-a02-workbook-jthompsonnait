@@ -53,10 +53,30 @@ namespace PlaylistManagementSystem.BLL
         //}
 
         // fetch playlist
-        public List<PlaylistTrackView> FetchPlaylist(
-            string userName, string playlistName)
+        public async Task<List<PlaylistTrackView>> FetchPlaylist(string userName, string playlistName)
         {
-            return null;
+            //  Business Rules
+            //	These are processing rules that need to be satisfied 
+            //		for valid data
+            //		rule:	playlist name cannot be empty
+            //		rule:	playlist must exist in the database 
+            //					(will be handle on webpage).
+
+            if (string.IsNullOrWhiteSpace(playlistName))
+            {
+                throw new ArgumentNullException("Playlist name is missing");
+            }
+
+            return _playlistManagementContext.PlaylistTracks
+                .Where(x => x.Playlist.Name == playlistName)
+                .Select(x => new PlaylistTrackView
+                {
+                    TrackId = x.TrackId,
+                    SongName = x.Track.Name,
+                    TrackNumber = x.TrackNumber,
+                    Milliseconds = x.Track.Milliseconds
+                }).OrderBy(x => x.TrackNumber)
+                .ToList();
         }
         //  fetch artist or album tracks
         public Task<PagedResult<TrackSelectionView>> FetchArtistOrAlbumTracks(

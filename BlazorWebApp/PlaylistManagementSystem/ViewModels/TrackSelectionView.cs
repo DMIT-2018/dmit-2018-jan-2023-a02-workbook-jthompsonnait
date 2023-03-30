@@ -8,5 +8,12 @@ namespace PlaylistManagementSystem.ViewModels
 		public string ArtistName { get; set; }
 		public int Milliseconds { get; set; }
 		public decimal Price { get; set; }
-	}
+        public string Length
+        {
+            get
+            {
+                return $"{(int)Milliseconds / 1000 / 60}:{Milliseconds / 1000 % 60}";
+            }
+        }
+    }
 }

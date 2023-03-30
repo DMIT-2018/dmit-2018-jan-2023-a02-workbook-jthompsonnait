@@ -2,8 +2,7 @@
 <ArrayOfArrayOfArrayOfString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <ArrayOfArrayOfString>
     <ArrayOfString>
-      <string>C:\OD\OneDrive - NAIT\Jan 2023\dmit-2018-jan-2023-a02-workbook-jthompsonnait\BlazorWebApp\BlazorWebApp\Pages\SamplePages\AdvancedInvoice.razor</string>
-      <string>C:\OD\OneDrive - NAIT\Jan 2023\dmit-2018-jan-2023-a02-workbook-jthompsonnait\BlazorWebApp\BlazorWebApp\Pages\SamplePages\AdvancedInvoice.Razor.cs</string>
+      <string>C:\OD\OneDrive - NAIT\Jan 2023\dmit-2018-jan-2023-a02-workbook-jthompsonnait\BlazorWebApp\PlaylistManagementSystem\BLL\PlaylistTrackService.cs</string>
     </ArrayOfString>
     <ArrayOfString>
       <string>C:\OD\OneDrive - NAIT\Jan 2023\dmit-2018-jan-2023-a02-workbook-jthompsonnait\BlazorWebApp\BlazorWebApp\Pages\SamplePages\PlaylistManagement.razor</string>
@@ -11,20 +10,10 @@
       <string>C:\OD\OneDrive - NAIT\Jan 2023\dmit-2018-jan-2023-a02-workbook-jthompsonnait\BlazorWebApp\BlazorWebApp\Pages\SamplePages\PlaylistManagement.razor.css</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>C:\OD\OneDrive - NAIT\Jan 2023\dmit-2018-jan-2023-a02-workbook-jthompsonnait\BlazorWebApp\BlazorWebApp\Pages\SamplePages\Basics.razor</string>
-      <string>C:\OD\OneDrive - NAIT\Jan 2023\dmit-2018-jan-2023-a02-workbook-jthompsonnait\BlazorWebApp\BlazorWebApp\Pages\SamplePages\Basics.razor.cs</string>
+      <string>C:\OD\OneDrive - NAIT\Jan 2023\dmit-2018-jan-2023-a02-workbook-jthompsonnait\BlazorWebApp\PlaylistManagementSystem\ViewModels\PlaylistTrackView.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>C:\OD\OneDrive - NAIT\Jan 2023\dmit-2018-jan-2023-a02-workbook-jthompsonnait\BlazorWebApp\PlaylistManagementSystem\BLL\PlaylistTrackService.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>C:\OD\OneDrive - NAIT\Jan 2023\dmit-2018-jan-2023-a02-workbook-jthompsonnait\BlazorWebApp\BlazorWebApp\appsettings.json</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>C:\OD\OneDrive - NAIT\Jan 2023\dmit-2018-jan-2023-a02-workbook-jthompsonnait\BlazorWebApp\PlaylistManagementSystem\PlaylistManagementExtension.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>C:\OD\OneDrive - NAIT\Jan 2023\dmit-2018-jan-2023-a02-workbook-jthompsonnait\BlazorWebApp\BlazorWebApp\Program.cs</string>
+      <string>C:\OD\OneDrive - NAIT\Jan 2023\dmit-2018-jan-2023-a02-workbook-jthompsonnait\BlazorWebApp\PlaylistManagementSystem\ViewModels\TrackSelectionView.cs</string>
     </ArrayOfString>
   </ArrayOfArrayOfString>
 </ArrayOfArrayOfArrayOfString>
