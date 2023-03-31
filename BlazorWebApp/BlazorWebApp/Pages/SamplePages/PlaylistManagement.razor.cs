@@ -124,11 +124,12 @@ namespace BlazorWebApp.Pages.SamplePages
             #endregion
         }
 
-        public void AddTrackToPlaylist(int trackId)
+        public async Task AddTrackToPlaylist(int trackId)
         {
             try
             {
-
+                PlaylistTrackService.AddTrack(userName, playlistName, trackId);
+                await FetchPlayList();
             }
             #region catch all exceptions
             catch (AggregateException ex)
@@ -151,11 +152,20 @@ namespace BlazorWebApp.Pages.SamplePages
             #endregion
         }
 
-        public void RemoveTracks()
+        public async Task RemoveTracks()
         {
             try
             {
-
+                List<int> removeTracks = new();
+                foreach (var playlist in Playlists)
+                {
+                    if (playlist.Remove)
+                    {
+                        removeTracks.Add(playlist.TrackId);
+                    }
+                }
+                PlaylistTrackService.RemoveTracks(playlistId, removeTracks);
+                await FetchPlayList();
             }
             #region catch all exceptions
             catch (AggregateException ex)
@@ -178,11 +188,23 @@ namespace BlazorWebApp.Pages.SamplePages
             #endregion
         }
 
-        public void ReorderTracks()
+        public async Task ReorderTracks()
         {
             try
             {
+                List<MoveTrackView> moveTracks = new();
+                foreach (var playlist in Playlists)
+                {
+                    if (playlist.NewTrackNumber > 0)
+                    {
+                        moveTracks.Add(
+                            new MoveTrackView(){TrackId = playlist.TrackId,
+                                TrackNumber = playlist.NewTrackNumber});
+                    }
+                }
 
+                PlaylistTrackService.MoveTrack(playlistId, moveTracks);
+                await FetchPlayList();
             }
             #region catch all exceptions
             catch (AggregateException ex)
